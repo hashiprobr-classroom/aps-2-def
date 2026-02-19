@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Testes de Unidade",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/unit_test",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "make_unit_test"
+        },
+        {
+            "name": "Testes de Integração",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/integration_test",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "make_integration_test"
+        }
+    ]
+}

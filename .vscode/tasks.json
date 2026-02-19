@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "make_unit_test",
+			"command": "make",
+			"args": [
+				"unit_test"
+			]
+		},
+		{
+			"label": "make_integration_test",
+			"command": "make",
+			"args": [
+				"integration_test"
+			]
+		}
+	]
+}
