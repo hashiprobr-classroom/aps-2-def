@@ -67,8 +67,28 @@ void fft(complex s[], complex t[], int n, int sign) {
     }
 }
 
-void fft_forward(complex s[], complex t[], int n) {
-    fft(s, t, n, -1);
+void fft_forward_2d(complex matrix[MAX_SIZE][MAX_SIZE], int width, int height) {
+    complex in[MAX_SIZE], out[MAX_SIZE];
+
+    for(int c = 0; c < width; c++) {
+        for(int l = 0; l < height; l++) {
+            in[l] = matrix[l][c];
+        }
+        fft_forward(in, out, height);
+        for(int l = 0; l < height; l++) {
+            matrix[l][c] = out[l];
+        }
+    }
+
+    for(int l = 0; l < height; l++) {
+        for(int c = 0; c < width; c++) {
+            in[c] = matrix[l][c];
+        }
+        fft_forward(in, out, width);
+        for(int c = 0; c < width; c++) {
+            matrix[l][c] = out[c];
+        }
+    }
 }
 
 void fft_inverse(complex t[], complex s[], int n) {
